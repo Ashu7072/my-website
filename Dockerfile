@@ -4,7 +4,7 @@ FROM nginx:alpine
 # Copy static website files to nginx's public directory
 COPY ./html /usr/share/nginx/html
 
-# Expose port 80
+# Expose port 82
 EXPOSE 82
 
 # Default command to run Nginx

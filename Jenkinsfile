@@ -10,7 +10,7 @@ pipeline {
         stage('Clone Repo') {
             steps {
                 echo "Cloning source code..."
-                // git url: 'https://your-repo-url.git'
+                // git url: 'https://github.com/Ashu7072/my-website.git'
             }
         }
 
@@ -34,7 +34,7 @@ pipeline {
         stage('Run Docker Container') {
             steps {
                 script {
-                    sh "docker run -d --name ${CONTAINER_NAME} -p 8080:82 ${IMAGE_NAME}"
+                    sh "docker run -d --name ${CONTAINER_NAME} -p 8081:82 ${IMAGE_NAME}"
                 }
             }
         }
@@ -42,7 +42,7 @@ pipeline {
 
     post {
         success {
-            echo "Website deployed at http://localhost:8080"
+            echo "Website deployed at http://localhost:8081"
         }
         failure {
             echo "Build or deployment failed."
